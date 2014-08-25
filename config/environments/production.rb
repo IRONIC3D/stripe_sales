@@ -83,17 +83,12 @@ Rails.application.configure do
   # Heroku Mandrill
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:
-  port:
-  user_name:
-  password:
-  domain:
-  authentication: :plain
-  'smtp.mandrillapp.com',
-  587,
-  ENV['MANDRILL_USERNAME'],
-  ENV['MANDRILL_APIKEY'],
-  'heroku.com',
+    address:          'smtp.mandrillapp.com',
+    port:             587,
+    user_name:        ENV['MANDRILL_USERNAME'],
+    password:         ENV['MANDRILL_APIKEY'],
+    domain:           'heroku.com',
+    authentication:   :plain
   }
   config.action_mailer.default_url_options = {
     :host => 'sell-me-something.herokuapp.com'
