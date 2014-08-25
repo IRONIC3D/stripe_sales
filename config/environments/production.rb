@@ -79,4 +79,23 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Heroku Mandrill
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:
+  port:
+  user_name:
+  password:
+  domain:
+  authentication: :plain
+  'smtp.mandrillapp.com',
+  587,
+  ENV['MANDRILL_USERNAMheroku appE'],
+  ENV['MANDRILL_APIKEY'],
+  'heroku.com',
+  }
+  config.action_mailer.default_url_options = {
+    :host => 'sell-me-something.herokuapp.com'
+  }
 end
